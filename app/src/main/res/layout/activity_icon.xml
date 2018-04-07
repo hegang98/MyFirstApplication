@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="热烈欢迎"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        />
+    <!--horizontal代表水平
+    vertical代表垂直
+    -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:text="图标在左"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btn_top"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:text="图标在上"
+            android:layout_weight="1"/>
+        <Button android:id="@+id/btn_right"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:text="图标在右"
+            android:layout_weight="1"/>
+        <Button android:id="@+id/btn_bottom"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:textColor="#000000"
+            android:text="图标在下"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

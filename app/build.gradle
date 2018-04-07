@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    //指定编译用的SDK版本号，如25表示使用Android7.1编译
+    compileSdkVersion 25
+    //指定编译工具的版本号。这里头两位数字必须与compileSdkVersion保持一致，具体版本好可在sdk
+    //安装目录sdk\build-toolsxia找到
+    buildToolsVersion "25.0.3"
+
+
+    defaultConfig {
+        //指定该模块的应用编号，即App的包名。该参数自动生产，无须修改
+        applicationId "com.example.a91436.myfirstapplication"
+        //指定App适合运行的最小SDK版本号，如15表示至少要在Android4.0.3上运行
+        minSdkVersion 19
+        //指定目标设备的SDK版本号，即该App最希望在那个版本的Android上运行
+        targetSdkVersion 25
+        //指定App的应用版本号
+        versionCode 1
+        //指定App的应用版本号
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            //指定是否开启代码混淆功能。true代表开启，false代表关闭
+            minifyEnabled false
+            //指定代码混淆规则文档的文件名
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+//指定App编译的依赖信息
+dependencies {
+    //指定引用jar包的路径
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //指定编译Android的高版本支持库，如AppCompatActivity必须指定编译appcompat-v7库
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
+    //指定单元测试编译用的junit版本号
+    testCompile 'junit:junit:4.12'
+}
